@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Henry V. Peteet</title>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <link rel="import" href="/static/components/font-roboto/roboto.html">
+  <style>
+    p {
+      text-indent: 20px;
+      font-size: 18px;
+    }
+    #tabs {
+      width: 100%;
+      margin: 0;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-size: 18px;
+      font-weight: 400;
+    }
+    html,body {
+      height: 100%;
+      margin: 0;
+      background-color: #666;
+      font-family: 'RobotoDraft', sans-serif;
+    }
+    #bg{
+      opacity: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: url("/static/images/congruent_outline.jpg");
+    }
+    .container {
+      width: 80%;
+      margin: 50px auto;
+    }
+    #resume_img {
+      border: none;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body unresolved touch-action="auto">
+  <div id="bg"></div>
+    <div id="tabs" valueattr="name" selected="AboutMe" self-end>
+      <div class="tab" name="AboutMe">About Me</div>
+      <div class="tab" name="Resume">Resume</div>
+      <div class="tab" name="Projects">Projects</div>
+      <div class="tab" name="Contact">Contact</div>
+    </div>
+    <!-- <paper-ripple id="ripple" fit></paper-ripple> -->
+
+    <div id="AboutMe">
+      <div class="container" layout vertical center>
+        <card-basic>
+         <h2>About Me</h2>
+         <img src="/static/images/headshot.jpg">
+         <p>I am a second year Computer Science student at the Georgia 
+         Institute of Technology. My interests include security, 
+         machine learning / AI, and graphics. Check out my projects
+         or my resume for more information.</p>
+        </card-basic>
+      </div>
+    </div>
+
+    <div id="Resume">
+      <div class="container" layout vertical center>
+        <card-basic>
+        <h2>Resume</h2>
+          <a href="https://drive.google.com/file/d/0B9eApNtA0E0ON1dkX2YyYWU2UW8/edit?usp=sharing">
+            <img id="resume_img" src="/static/images/Resume.jpg">
+          </a>
+        </card-basic>
+      </div>
+    </div>
+
+    <div id="Projects">
+      <div class="container" layout vertical center>
+        <card-basic>
+          <h2>Incoming</h2>
+          <a href="http://hackgt.com/">
+            <img src="/static/images/HackGTLogo.svg">
+          </a>
+          A new creation will soon be spawned from <a href="http://hackgt.com/">Hack GT</a>
+        </card-basic>
+      </div>
+
+      <div class="container" layout vertical center>
+        <card-basic>
+          <h2>Tetrabble</h2>
+          <a href="http://tetrabble.appspot.com/">
+            <img src="/static/images/TetrabbleScreenshot.png">
+          </a>
+          A wombo combo of Tetris and Scrabble. If you have ever played Tetris or 
+          Scrabble you should prepare to have your mind blown by this combination 
+          of two long-loved games.
+        </card-basic>
+      </div>
+
+      <div class="container" layout vertical center>
+        <card-basic>
+          <h2>Movement Through the Void</h2>
+          <img src="/static/images/DarkMatterGalaxy.png">
+          The purpose of our project was to show evidence of dark matter through observation of discrepancies between the predicted Keplerian galactic orbits and the corresponding real data. To accomplish this, we simulated galaxy dynamics using the programming language Python and the VPython module to run the visuals. Important parts of the program include a body class; acceleration due to gravity, movement from acceleration, and orbit velocity functions; and a Kuzmin disk system for generating random bodies. Combined, these and proper testing procedures led us to accurately simulate a randomly generated disk galaxy with accurate orbit velocities. The data for this project was collected by observing the movement of the galaxy simulation visual and from the curve that showed how the velocities of bodies changed according to their radial location in the galaxy. Ultimately, we found that our animation of the movement of our generated galaxy and its corresponding velocity graph accurately reflected current scientific research in the same realm as this project. The observed velocities curve reflected the "real world" velocities curve, and we could clearly see the difference in orbit velocities of outer stars as opposed to the inner ones. This accounted for the discrepancies mentioned earlier, and provided the evidence of dark matter we'd hoped to find.
+        </card-basic>
+      </div>
+    </div>
+
+    <div id="Contact">
+      <div class="container" layout vertical center>
+        <card-basic>
+          <h2>Contact Info</h2>
+          Email: henry.v.peteet@gmail.com<br>
+          Phone number available upon request.
+        </card-basic>
+      </div>
+    </div>
+  
+</body>
+
+<script>
+  var tabs = document.querySelector('paper-tabs')
+  var Resume = document.querySelector('#AboutMe')
+  var Resume = document.querySelector('#Resume')
+  var Projects = document.querySelector('#Projects')
+  var Contact = document.querySelector('#Contact')
+  tabs.addEventListener('core-select', function() {
+    
+    if (tabs.selected == 'AboutMe') {
+      AboutMe.style.display = 'block';
+    }
+    else {
+      AboutMe.style.display = 'none';
+    }
+    if (tabs.selected == 'Resume') {
+      Resume.style.display = 'block';
+    }
+    else {
+      Resume.style.display = 'none';
+    }
+
+    if (tabs.selected == 'Projects') {
+      Projects.style.display = 'block';
+    }
+    else {
+      Projects.style.display = 'none';
+    }
+
+    if (tabs.selected == 'Contact') {
+      Contact.style.display = 'block';
+    }
+    else {
+      Contact.style.display = 'none';
+    }
+  });
+</script>
+</html>

@@ -1,0 +1,62 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-shadow/paper-shadow.html">
+
+<polymer-element name="card-basic">
+
+  <template>
+    <style>
+      :host{
+        display: block;
+        position: relative;
+        background-color: #E5E5E5;
+        padding: 20px;
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: 300;
+        overflow: hidden;
+      }
+      .card-header {
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+      polyfill-next-selector {content: 'img';}
+      ::content img {
+        width: 150px;
+        margin-right: 20px;
+        float: left;
+      }
+      polyfill-next-selector {content: 'h3';}
+      ::content h3 {
+        color: #444;
+      }
+      polyfill-next-selector {content: 'strong';}
+      ::content strong {
+        color: #444;
+      }
+      polyfill-next-selector {content: '.card-header h2';}
+      .card-header ::content h2 {
+        font-size: 50px;
+        font-weight: 400;
+        color: #333;
+        margin: auto;
+      }
+      paper-ripple {
+        color: #4285f4;
+      }
+    </style>
+
+    
+    <div class="card-header" fullbleed vertical layout horizontal center>
+      <content select="h2"></content>
+    </div>
+
+    <div class="card-header">
+      <content></content>
+    </div>
+    <paper-shadow z="2"></paper-shadow>
+  </template>
+
+  <script>
+    Polymer({});
+  </script>
+</polymer-element>
